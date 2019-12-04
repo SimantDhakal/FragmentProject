@@ -25,6 +25,14 @@ public class CalculatorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator);
 
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        SumFragment sumFragment = new SumFragment();
+        fragmentTransaction.replace(R.id.layoutContainer, sumFragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
         buttonSum = findViewById(R.id.btnSum);
         buttonSum.setOnClickListener(new View.OnClickListener() {
             @Override
