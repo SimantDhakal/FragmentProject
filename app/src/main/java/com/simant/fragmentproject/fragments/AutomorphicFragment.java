@@ -46,7 +46,8 @@ public class AutomorphicFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 int N = Integer.parseInt(editTextNumber.getText().toString());
-                System.out.println(isAutomorphic(N) ? "Automorphic" : "Not Automorphic");
+                // called function
+                textViewAuto.setText(isAutomorphic(N)? "The " + N + " is automorphic number" : "This " + N + " is not an Automorphic number");
             }
         });
 
@@ -56,21 +57,14 @@ public class AutomorphicFragment extends Fragment {
     // Function to check Automorphic number
     static boolean isAutomorphic(int N)
     {
-        // Store the square
         int sq = N * N;
-
-        // Start Comparing digits
         while (N > 0) {
-            // Return false, if any digit of N doesn't
-            // match with its square's digits from last
             if (N % 10 != sq % 10)
                 return false;
 
-            // Reduce N and square
             N /= 10;
             sq /= 10;
         }
-
         return true;
     }
 
