@@ -10,6 +10,7 @@ import android.widget.Button;
 
 import com.simant.fragmentproject.fragments.FirstFragment;
 import com.simant.fragmentproject.fragments.SecondFragment;
+import com.simant.fragmentproject.fragments.SumFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,11 +29,11 @@ public class MainActivity extends AppCompatActivity {
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
                 if (status) {
-                    FirstFragment firstFragment = new FirstFragment();
-                    fragmentTransaction.replace(R.id.fragmentContainer, firstFragment);
+                    SumFragment sumFragment = new SumFragment();
+                    fragmentTransaction.replace(R.id.fragmentContainer, sumFragment);
                     fragmentTransaction.addToBackStack(null);
                     fragmentTransaction.commit();
-                    btnFragmentL.setText("Load Second Fragment");
+                    btnFragmentL.setText("Load Second");
                     status = false;
                 } else {
                     SecondFragment secondFragment = new SecondFragment();
