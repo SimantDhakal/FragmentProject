@@ -53,7 +53,7 @@ public class PalendromeFragment extends Fragment {
                     StringBuffer c = new StringBuffer(editTextPalen.getText().toString());
                     textViewReverse.setText(c.reverse());
 
-                    if (editTextPalen.getText().equals(textViewReverse.getText())) {
+                    if (editTextPalen.getText().toString().equals(textViewReverse.getText().toString())) {
                         Toast.makeText(getActivity(), "The value is palendrome", Toast.LENGTH_LONG).show();
                     } else {
                         Toast.makeText(getActivity(), "Oops!! Not a palendrome number", Toast.LENGTH_LONG).show();
