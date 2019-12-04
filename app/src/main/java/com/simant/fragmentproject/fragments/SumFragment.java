@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.simant.fragmentproject.R;
@@ -22,6 +23,8 @@ public class SumFragment extends Fragment {
 
     EditText editTextFirst, editTextSecond;
     Button buttonSum;
+    TextView textViewSum;
+    String finalSum;
 
     public SumFragment() {
         // Required empty public constructor
@@ -36,6 +39,7 @@ public class SumFragment extends Fragment {
         editTextFirst = view.findViewById(R.id.etFirst);
         editTextSecond = view.findViewById(R.id.etSecond);
         buttonSum = view.findViewById(R.id.btnSum);
+        textViewSum = view.findViewById(R.id.txtResultSum);
 
         buttonSum.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,7 +47,8 @@ public class SumFragment extends Fragment {
                 int firs = Integer.parseInt(editTextFirst.getText().toString());
                 int secont = Integer.parseInt(editTextSecond.getText().toString());
                 int result = firs + secont;
-                Toast.makeText(getActivity(), "The sum is " + result, Toast.LENGTH_SHORT).show();
+                finalSum = String.valueOf(result);
+                textViewSum.setText("The total sum is " + finalSum);
             }
         });
 

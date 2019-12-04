@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
+    android:background="#f0f0f0"
     tools:context=".fragments.SumFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -13,7 +14,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_margin="20dp"
-        android:background="@color/colorPrimary"
+        android:background="#fff"
         android:padding="15dp">
 
         <EditText
@@ -22,6 +23,8 @@
             android:id="@+id/etFirst"
             android:textAlignment="center"
             android:hint="First number"
+            android:textSize="14sp"
+            android:inputType="number"
             android:layout_marginBottom="15dp"/>
 
         <EditText
@@ -29,6 +32,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/etSecond"
             android:textAlignment="center"
+            android:textSize="14sp"
+            android:inputType="number"
             android:hint="Second number"/>
 
         <Button
@@ -36,9 +41,18 @@
             android:layout_height="wrap_content"
             android:id="@+id/btnSum"
             android:background="@color/colorAccent"
-            android:textSize="16dp"
             android:textColor="#fff"
+            android:textSize="14sp"
+            android:layout_marginTop="20dp"
             android:text="Calculate"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14sp"
+            android:textSize="16dp"
+            android:textAlignment="center"
+            android:id="@+id/txtResultSum"/>
 
 
     </LinearLayout>

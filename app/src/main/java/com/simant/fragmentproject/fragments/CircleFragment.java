@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.simant.fragmentproject.R;
@@ -22,6 +23,8 @@ public class CircleFragment extends Fragment {
     View view;
     Button buttoncircle;
     EditText etFirst;
+    TextView textViewResult;
+    String finalResult;
 
     public CircleFragment() {
         // Required empty public constructor
@@ -36,12 +39,15 @@ public class CircleFragment extends Fragment {
 
         buttoncircle = view.findViewById(R.id.btnCalRadius);
         etFirst = view.findViewById(R.id.editNumber);
+        textViewResult = view.findViewById(R.id.result);
+
         buttoncircle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 float radius = Float.parseFloat(etFirst.getText().toString());
                 float result = 22/7*(radius*radius);
-                Toast.makeText(getActivity(), "The area of radius is " + result, Toast.LENGTH_SHORT).show();
+                finalResult = String.valueOf(result);
+                textViewResult.setText("The area of a circle is " + finalResult);
             }
         });
         return view;
